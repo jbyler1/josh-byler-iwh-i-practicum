@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title= title
+  body
+    h1 Add a Magic Card
+
+    a(href="/") Return to the homepage
+
+    form(action="/update-cobj" method="POST")
+      label Name:
+      input(type="text" name="name" required)
+      br
+
+      label Rarity:
+      input(type="text" name="rarity")
+      br
+
+      label Price:
+      input(type="text" name="price")
+      br
+
+      button(type="submit") Submit

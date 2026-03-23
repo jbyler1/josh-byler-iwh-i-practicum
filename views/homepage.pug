@@ -1,0 +1,55 @@
+doctype html
+html
+  head
+    title= title
+    style.
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      h1 {
+        margin-bottom: 10px;
+      }
+      a {
+        display: inline-block;
+        margin-bottom: 15px;
+        text-decoration: none;
+        color: #007BFF;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        max-width: 600px;
+      }
+      th, td {
+        padding: 10px;
+        border: 1px solid #ccc;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+
+  body
+    h1 Magic Cards
+
+    a(href="/update-cobj") + Add a new Magic Card
+
+    if records.length === 0
+      p No records found.
+    else
+      table
+        thead
+          tr
+            th Name
+            th Rarity
+            th Price
+        tbody
+          each record in records
+            tr
+              td= record.properties.name || "N/A"
+              td= record.properties.rarity || "N/A"
+              td $#{record.properties.price || "0"}
